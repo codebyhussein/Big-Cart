@@ -12,10 +12,18 @@ import 'package:iconly/iconly.dart';
 
 import '../widgets/CustomAppBar.dart';
 
-class feedBackScreen extends StatelessWidget {
-  feedBackScreen({super.key});
+class feedBackScreen extends StatefulWidget {
+  const feedBackScreen({super.key});
+
+  @override
+  State<feedBackScreen> createState() => _feedBackScreenState();
+}
+
+class _feedBackScreenState extends State<feedBackScreen> {
   String? feedBackText;
+
   double? feedBackvalue = 0;
+
   TextEditingController FeedBackController = TextEditingController();
 
   @override
@@ -106,9 +114,6 @@ class feedBackScreen extends StatelessWidget {
                         border: InputBorder.none,
                         hintText: 'feedback',
                       ),
-                      // onFieldSubmitted: (value) {
-                      //   feedBackText = value;
-                      // },
                     ),
                   ),
                   SizedBox(
