@@ -60,13 +60,6 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return const MaterialApp(
-            // theme: ThemeData(
-            //     appBarTheme: const AppBarTheme(
-            //   systemOverlayStyle: SystemUiOverlayStyle(
-            //       statusBarColor: Colors.white,
-            //       statusBarIconBrightness: Brightness.dark,
-            //       systemNavigationBarDividerColor: Colors.black),
-            // )),
             debugShowCheckedModeBanner: false,
             home: SplashScreen(),
           );
