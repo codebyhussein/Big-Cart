@@ -1,6 +1,6 @@
 # Big Cart
 
-A new Flutter project.
+iti-project
 
 ## Getting Started
 
