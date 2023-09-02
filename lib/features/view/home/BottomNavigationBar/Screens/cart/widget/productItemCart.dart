@@ -1,6 +1,6 @@
 import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/core/style.dart';
-import 'package:big_cart/features/view/home/category/model/product_model.dart';
+import 'package:big_cart/features/model/product_model.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

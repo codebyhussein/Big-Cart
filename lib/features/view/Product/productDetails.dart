@@ -1,7 +1,7 @@
 import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/features/controller/CartCubit/cart_cubit.dart';
 import 'package:big_cart/features/view/Product/widgets/Bottom.dart';
-import 'package:big_cart/features/view/home/category/model/product_model.dart';
+import 'package:big_cart/features/model/product_model.dart';
 import 'package:big_cart/features/view/home/layoutScreen.dart';
 
 import 'package:flutter/material.dart';
