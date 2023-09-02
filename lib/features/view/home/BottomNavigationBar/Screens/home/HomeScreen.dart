@@ -1,7 +1,8 @@
 import 'package:big_cart/core/constant.dart';
-import 'package:big_cart/features/home/category/view/categoryScreen.dart';
+
 import 'package:big_cart/features/view/Product/widgets/FetchData.dart';
 import 'package:big_cart/features/view/home/category/view/categoryFilter.dart';
+import 'package:big_cart/features/view/home/category/view/categoryScreen.dart';
 import 'package:big_cart/features/view/home/widgets/DefultSearchWidget.dart';
 
 import 'package:flutter/material.dart';

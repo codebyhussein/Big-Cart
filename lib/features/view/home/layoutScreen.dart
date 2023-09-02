@@ -1,9 +1,9 @@
 import 'package:big_cart/core/style.dart';
 
-import 'package:big_cart/features/home/category/view/categoryScreen.dart';
 import 'package:big_cart/features/view/Profile/profileScreen.dart';
 import 'package:big_cart/features/view/home/BottomNavigationBar/Screens/cart/cartScreenFull.dart';
 import 'package:big_cart/features/view/home/BottomNavigationBar/Screens/home/HomeScreen.dart';
+import 'package:big_cart/features/view/home/category/view/categoryScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

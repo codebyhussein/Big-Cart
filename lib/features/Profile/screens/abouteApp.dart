@@ -1,9 +1,8 @@
-import 'package:big_cart/features/Widgets/CustomButton.dart';
 import 'package:big_cart/core/constant.dart';
-import 'package:big_cart/features/home/layoutScreen.dart';
+import 'package:big_cart/features/view/Widgets/CustomButton.dart';
+import 'package:big_cart/features/view/home/layoutScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:iconly/iconly.dart';
 
 class abouteApp_screen extends StatelessWidget {

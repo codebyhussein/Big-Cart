@@ -1,9 +1,9 @@
+import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/core/style.dart';
 import 'package:big_cart/features/controller/HomeCubit/home_cubit.dart';
 
 import 'package:big_cart/features/view/Widgets/CustomButton.dart';
 import 'package:big_cart/features/view/home/layoutScreen.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -11,7 +11,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:iconly/iconly.dart';
 
-import '../../../../core/constant.dart';
 import '../widgets/CustomAppBar.dart';
 
 class feedBackScreen extends StatefulWidget {

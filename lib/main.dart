@@ -1,7 +1,7 @@
 import 'package:big_cart/features/controller/CartCubit/cart_cubit.dart';
-import 'package:big_cart/features/controller/Cubit/LoginCubit/login_cubit.dart';
 
 import 'package:big_cart/features/controller/HomeCubit/home_cubit.dart';
+import 'package:big_cart/features/controller/LoginCubit/login_cubit.dart';
 import 'package:big_cart/features/view/home/layoutScreen.dart';
 import 'package:big_cart/features/view/splash/splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';

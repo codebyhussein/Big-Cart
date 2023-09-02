@@ -1,10 +1,10 @@
 import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/core/style.dart';
-import 'package:big_cart/features/auth/signin/RegisterScreen.dart';
 
 import 'package:big_cart/features/controller/LoginCubit/login_cubit.dart';
 import 'package:big_cart/features/view/Widgets/CustomButton.dart';
 import 'package:big_cart/features/view/Widgets/CustomTextFormField.dart';
+import 'package:big_cart/features/view/auth/signin/RegisterScreen.dart';
 import 'package:big_cart/features/view/home/layoutScreen.dart';
 
 import 'package:flutter/material.dart';

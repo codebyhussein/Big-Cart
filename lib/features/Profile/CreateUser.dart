@@ -1,8 +1,8 @@
-import 'package:big_cart/Cubit/RegisterCubit/register_cubit.dart';
-import 'package:big_cart/features/Widgets/CustomButton.dart';
 import 'package:big_cart/core/style.dart';
-import 'package:big_cart/features/Profile/widgets/CustomAppBar.dart';
-import 'package:big_cart/features/home/layoutScreen.dart';
+import 'package:big_cart/features/controller/RegisterCubit/register_cubit.dart';
+import 'package:big_cart/features/view/Profile/widgets/CustomAppBar.dart';
+import 'package:big_cart/features/view/Widgets/CustomButton.dart';
+import 'package:big_cart/features/view/home/layoutScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -192,11 +192,6 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
                                           birthday: birthdayController.text,
                                           name: nameController.text,
                                           instagram: instaController.text);
-                                  Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) {
-                                      return const layoutScreen();
-                                    },
-                                  ));
                                 }
                               },
                             ),

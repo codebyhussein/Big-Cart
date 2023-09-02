@@ -1,8 +1,9 @@
-import 'package:big_cart/Cubit/HomeCubit/home_cubit.dart';
-import 'package:big_cart/features/Widgets/CustomButton.dart';
 import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/core/style.dart';
-import 'package:big_cart/features/home/layoutScreen.dart';
+import 'package:big_cart/features/controller/HomeCubit/home_cubit.dart';
+
+import 'package:big_cart/features/view/Widgets/CustomButton.dart';
+import 'package:big_cart/features/view/home/layoutScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -10,7 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:iconly/iconly.dart';
 
-import '../widgets/CustomAppBar.dart';
+import '../../view/Profile/widgets/CustomAppBar.dart';
 
 class feedBackScreen extends StatefulWidget {
   const feedBackScreen({super.key});
@@ -124,11 +125,6 @@ class _feedBackScreenState extends State<feedBackScreen> {
                       await BlocProvider.of<HomeCubit>(context).FeedBackMethod(
                           FeedBackvalue: feedBackvalue!,
                           FeedBackText: FeedBackController.text);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const layoutScreen()),
-                      );
                     },
                     text: 'Start shopping',
                   )

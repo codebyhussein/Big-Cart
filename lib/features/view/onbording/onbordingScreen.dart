@@ -1,5 +1,6 @@
 import 'package:big_cart/core/style.dart';
-import 'package:big_cart/features/auth/login/LoginScreen.dart';
+
+import 'package:big_cart/features/view/auth/login/LoginScreen.dart';
 import 'package:big_cart/features/view/onbording/screens/BuildItem1.dart';
 import 'package:big_cart/features/view/onbording/screens/BuildItem2.dart';
 import 'package:big_cart/features/view/onbording/screens/BuildItem3.dart';

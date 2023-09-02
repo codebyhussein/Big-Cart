@@ -193,6 +193,11 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
                                           birthday: birthdayController.text,
                                           name: nameController.text,
                                           instagram: instaController.text);
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) {
+                                      return const layoutScreen();
+                                    },
+                                  ));
                                 }
                               },
                             ),
