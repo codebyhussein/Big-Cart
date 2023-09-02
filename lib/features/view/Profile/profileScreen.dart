@@ -1,10 +1,10 @@
 import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/core/style.dart';
-import 'package:big_cart/features/Profile/CreateUser.dart';
-import 'package:big_cart/features/Profile/screens/abouteApp.dart';
+import 'package:big_cart/features/view/Profile/CreateUser.dart';
+import 'package:big_cart/features/view/Profile/screens/abouteApp.dart';
 
-import 'package:big_cart/features/Profile/screens/favorite/favoritScreen.dart';
 import 'package:big_cart/features/view/Profile/screens/abouteMe.dart';
+import 'package:big_cart/features/view/Profile/screens/favorite/favoritScreen.dart';
 import 'package:big_cart/features/view/Profile/widgets/RowTemplete.dart';
 
 import 'package:flutter/material.dart';
