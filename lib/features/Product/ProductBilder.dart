@@ -1,4 +1,5 @@
 import 'package:big_cart/core/constant.dart';
+import 'package:big_cart/core/style.dart';
 import 'package:big_cart/features/Product/productDetails.dart';
 import 'package:big_cart/features/home/category/model/product_model.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,10 @@ class _ProductBuilderState extends State<ProductBuilder> {
           Container(
             height: 210.h,
             width: 160.w,
-            decoration: const BoxDecoration(color: Colors.white),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: const [AppStyle.defaultBoxShadow],
+                color: Colors.white),
             child: Column(
               children: [
                 Padding(

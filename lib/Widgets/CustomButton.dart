@@ -13,7 +13,7 @@ class CustomButton extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.9,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            color: style.kmainColor,
+            color: AppStyle.kmainColor,
           ),
           child: MaterialButton(
               onPressed: onpressed,

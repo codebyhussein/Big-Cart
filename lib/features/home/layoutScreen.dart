@@ -1,12 +1,13 @@
+import 'package:big_cart/core/style.dart';
 import 'package:big_cart/features/Profile/profileScreen.dart';
 import 'package:big_cart/features/home/BottomNavigationBar/Screens/cart/cartScreenFull.dart';
 import 'package:big_cart/features/home/BottomNavigationBar/Screens/home/HomeScreen.dart';
+
 import 'package:big_cart/features/home/category/view/categoryScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:iconly/iconly.dart';
-
-import 'category/model/product_model.dart';
 
 class layoutScreen extends StatefulWidget {
   const layoutScreen({super.key});
@@ -16,102 +17,116 @@ class layoutScreen extends StatefulWidget {
 }
 
 class _layoutScreenState extends State<layoutScreen> {
-  String? Search;
-  PageController pageController = PageController();
+  int currentIndex = 0;
 
-  int BottomSHeetIndex = 0;
-  ProductModel? productModel;
-  List<ProductModel> ProductCart = [];
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
+  List<Widget> ScreenView = [
+    const FeatureDataScreen(),
+    const CartScreen(),
+    const CategoryScreen(),
+    profileScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
-      body: PageView(
-        controller: pageController,
-        onPageChanged: (index) {
-          setState(() {
-            BottomSHeetIndex = index;
-          });
-        },
-        children: const [
-          FeatureDataScreen(),
-          CartScreen(),
-          CategoryScreen(),
-          profileScreen(),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.shifting,
-          selectedFontSize: 28,
-          elevation: 0,
-          currentIndex: BottomSHeetIndex,
-          selectedItemColor: Colors.green,
-          unselectedItemColor: Colors.grey,
-          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-          onTap: (value) {
-            setState(() {
-              BottomSHeetIndex = value;
-              pageController.animateToPage(value,
-                  duration: const Duration(milliseconds: 500),
-                  curve: Curves.ease);
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(
-              activeIcon: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Icon(
-                  IconlyLight.home,
-                ),
+        extendBody: true,
+        body: ScreenView[currentIndex],
+        bottomNavigationBar: Container(
+          width: double.infinity,
+          height: 50.h,
+          decoration: const ShapeDecoration(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20.0),
+                topLeft: Radius.circular(20.0),
               ),
-              icon: Icon(
-                IconlyLight.home,
-              ),
-              label: '',
             ),
-            BottomNavigationBarItem(
-              activeIcon: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Icon(
-                  IconlyLight.bag,
-                ),
+            shadows: [
+              BoxShadow(
+                color: Color(0x3F000000),
+                blurRadius: 4,
+                offset: Offset(0, -2),
+                spreadRadius: 0,
+              )
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                enableFeedback: false,
+                onPressed: () {
+                  setState(() {
+                    currentIndex = 0;
+                  });
+                },
+                icon: currentIndex == 0
+                    ? Icon(
+                        IconlyBold.home,
+                        color: AppStyle.kmainColor,
+                        size: 32,
+                      )
+                    : const Icon(
+                        IconlyLight.home,
+                        size: 20,
+                      ),
               ),
-              icon: Icon(
-                IconlyLight.bag,
+              IconButton(
+                enableFeedback: false,
+                onPressed: () {
+                  setState(() {
+                    currentIndex = 1;
+                  });
+                },
+                icon: currentIndex == 1
+                    ? Icon(
+                        Icons.shopping_cart_rounded,
+                        color: AppStyle.kmainColor,
+                        size: 32,
+                      )
+                    : const Icon(
+                        Icons.shopping_cart_outlined,
+                        size: 20,
+                      ),
               ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              activeIcon: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Icon(
-                  IconlyLight.category,
-                ),
+              IconButton(
+                enableFeedback: false,
+                onPressed: () {
+                  setState(() {
+                    currentIndex = 2;
+                  });
+                },
+                icon: currentIndex == 2
+                    ? Icon(
+                        IconlyBold.category,
+                        color: AppStyle.kmainColor,
+                        size: 32,
+                      )
+                    : const Icon(
+                        IconlyLight.category,
+                        size: 20,
+                      ),
               ),
-              icon: Icon(
-                IconlyLight.category,
+              IconButton(
+                enableFeedback: false,
+                onPressed: () {
+                  setState(() {
+                    currentIndex = 3;
+                  });
+                },
+                icon: currentIndex == 3
+                    ? Icon(
+                        IconlyBold.profile,
+                        color: AppStyle.kmainColor,
+                        size: 32,
+                      )
+                    : const Icon(
+                        IconlyLight.profile,
+                        size: 20,
+                      ),
               ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              activeIcon: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Icon(
-                  IconlyLight.profile,
-                ),
-              ),
-              icon: Icon(
-                IconlyLight.profile,
-              ),
-              label: '',
-            )
-          ]),
-    );
+            ],
+          ),
+        ));
   }
 }

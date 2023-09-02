@@ -50,7 +50,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                   width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: style.kmainColor),
+                      color: AppStyle.kmainColor),
                   child: MaterialButton(
                       onPressed: () async {
                         await Navigator.push(context, MaterialPageRoute(
@@ -98,7 +98,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                           dotWidth: 24.0,
                           dotHeight: 16.0,
                           type: WormType.thinUnderground,
-                          activeDotColor: style.kmainColor),
+                          activeDotColor: AppStyle.kmainColor),
                     ),
                     TextButton(
                         onPressed: () {

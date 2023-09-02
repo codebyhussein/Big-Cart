@@ -63,7 +63,7 @@ class _feedBackScreenState extends State<feedBackScreen> {
                   Container(
                     height: 250.h,
                     width: double.infinity,
-                    color: style.backgroundColor,
+                    color: AppStyle.backgroundColor,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

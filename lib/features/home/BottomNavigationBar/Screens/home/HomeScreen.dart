@@ -25,14 +25,14 @@ class _FeatureDataScreenState extends State<FeatureDataScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
         // scrollDirection: Axis.vertical,
         child: Column(
           children: [
             SizedBox(
-              height: 25.h,
+              height: 30.h,
             ),
             DefultTextFormFieldSearch(
               text: 'Search keywords..',

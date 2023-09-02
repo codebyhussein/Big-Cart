@@ -37,7 +37,13 @@ class abouteApp_screen extends StatelessWidget {
             ),
             const Spacer(),
             CustomButton(
-              onpressed: () {},
+              onpressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return const layoutScreen();
+                  },
+                ));
+              },
               text: 'Start Shoping',
             ),
             SizedBox(

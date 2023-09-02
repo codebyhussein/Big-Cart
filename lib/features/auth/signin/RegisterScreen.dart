@@ -2,6 +2,7 @@ import 'package:big_cart/Cubit/RegisterCubit/register_cubit.dart';
 import 'package:big_cart/Widgets/CustomButton.dart';
 import 'package:big_cart/Widgets/CustomTextFormField.dart';
 import 'package:big_cart/core/constant.dart';
+import 'package:big_cart/core/style.dart';
 import 'package:big_cart/features/auth/login/LoginScreen.dart';
 import 'package:big_cart/features/home/layoutScreen.dart';
 import 'package:flutter/material.dart';
@@ -61,6 +62,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
       },
       builder: (context, state) {
         return ModalProgressHUD(
+          progressIndicator: CircularProgressIndicator(
+            color: AppStyle.kmainColor,
+          ),
           inAsyncCall: isloading,
           child: SingleChildScrollView(
             child: Column(
@@ -165,11 +169,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 password: passwordController.text,
                                 phone: phoneController.text,
                               );
-                              Navigator.push(context, MaterialPageRoute(
-                                builder: (context) {
-                                  return const layoutScreen();
-                                },
-                              ));
                             }
                           },
                           text: 'Signup'),

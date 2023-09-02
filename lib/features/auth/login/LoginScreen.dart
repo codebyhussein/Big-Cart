@@ -2,11 +2,13 @@ import 'package:big_cart/Cubit/LoginCubit/login_cubit.dart';
 import 'package:big_cart/Widgets/CustomButton.dart';
 import 'package:big_cart/Widgets/CustomTextFormField.dart';
 import 'package:big_cart/core/constant.dart';
+import 'package:big_cart/core/style.dart';
 import 'package:big_cart/features/auth/signin/RegisterScreen.dart';
 import 'package:big_cart/features/home/layoutScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -62,6 +64,9 @@ class _LoginScreenState extends State<LoginScreen> {
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: isloading,
+          progressIndicator: CircularProgressIndicator(
+            color: AppStyle.kmainColor,
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -189,11 +194,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   .loginUser(
                                       email: emailController.text,
                                       password: passwordController.text);
-                              Navigator.push(context, MaterialPageRoute(
-                                builder: (context) {
-                                  return const layoutScreen();
-                                },
-                              ));
+                              // Navigator.push(context, MaterialPageRoute(
+                              //   builder: (context) {
+                              //     return const layoutScreen();
+                              //   },
+                              // ));
                             }
                           },
                           text: 'Login'),

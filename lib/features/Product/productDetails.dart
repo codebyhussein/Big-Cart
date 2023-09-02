@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'package:iconly/iconly.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -31,9 +32,8 @@ class productDetailsScreen extends StatelessWidget {
           isfav = !isfav;
         }
         if (state is AddProductToCart) {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              content: Text('Product Added To Cart',
-                  style: TextStyle(color: Colors.white))));
+          Get.snackbar('', 'Product Added To Cart',
+              snackPosition: SnackPosition.BOTTOM);
           Navigator.push(context, MaterialPageRoute(
             builder: (context) {
               return const layoutScreen();
@@ -61,7 +61,7 @@ class productDetailsScreen extends StatelessWidget {
                           Image.asset('assets/images/product1.png'),
                           Positioned(
                             left: 1.w,
-                            // right: 150.w,
+                            // right: 320.w,
                             child: GestureDetector(
                               onTap: () {
                                 Navigator.push(context, MaterialPageRoute(
@@ -200,12 +200,6 @@ class productDetailsScreen extends StatelessWidget {
                     onPressed: () async {
                       await BlocProvider.of<CartCubit>(context)
                           .AddToCart(productModel);
-
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return const layoutScreen();
-                        },
-                      ));
                     },
                   ),
                   SizedBox(

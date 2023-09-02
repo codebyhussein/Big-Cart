@@ -11,7 +11,7 @@ class favoritScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: style.backgroundColor,
+      backgroundColor: AppStyle.backgroundColor,
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: DefultAppBar(

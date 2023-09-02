@@ -55,7 +55,7 @@ class _abouteMe_screenState extends State<abouteMe_screen> {
       child: getUserDetails.isEmpty
           ? Center(
               child: CircularProgressIndicator(
-              color: style.kmainColor,
+              color: AppStyle.kmainColor,
             ))
           : ListView.builder(
               itemCount: getUserDetails.length,

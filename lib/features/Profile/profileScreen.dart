@@ -6,6 +6,7 @@ import 'package:big_cart/features/Profile/screens/abouteMe.dart';
 import 'package:big_cart/features/Profile/screens/favorite/favoritScreen.dart';
 import 'package:big_cart/features/Profile/widgets/RowTemplete.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_expanded_tile/flutter_expanded_tile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:iconly/iconly.dart';
@@ -13,8 +14,8 @@ import 'package:iconly/iconly.dart';
 import 'screens/feedBackScreen.dart';
 
 class profileScreen extends StatelessWidget {
-  const profileScreen({super.key});
-
+  profileScreen({super.key});
+  final ExpandedTileController _controller = ExpandedTileController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +28,7 @@ class profileScreen extends StatelessWidget {
           children: [
             Container(
                 height: double.infinity,
-                color: style.backgroundColor,
+                color: AppStyle.backgroundColor,
                 child: Column(
                   children: [
                     SizedBox(
@@ -81,7 +82,7 @@ class profileScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
-                            return feedBackScreen();
+                            return const feedBackScreen();
                           },
                         ));
                       },

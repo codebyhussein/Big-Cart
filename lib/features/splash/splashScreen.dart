@@ -46,7 +46,7 @@ class SplashScreen extends StatelessWidget {
             children: [
               CircleAvatar(
                   radius: 30,
-                  backgroundColor: style.kmainColor,
+                  backgroundColor: AppStyle.kmainColor,
                   child: IconButton(
                       onPressed: () {
                         Navigator.push(

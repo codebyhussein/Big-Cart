@@ -60,4 +60,23 @@ class HomeCubit extends Cubit<HomeState> {
     counter = counter--;
     emit(decreseOne());
   }
+
+  Future<List<ProductModel>?> getProducts() async {
+    CollectionReference productCollection =
+        FirebaseFirestore.instance.collection('Product');
+
+    QuerySnapshot response = await productCollection.get();
+
+    List<ProductModel> productList = []; // List to store ProductModel objects
+
+    for (QueryDocumentSnapshot element in response.docs) {
+      Map<String, dynamic> data = element.data() as Map<String, dynamic>;
+
+      // Assuming ProductModel has a named constructor that takes a map
+      ProductModel product = ProductModel.fromJson(data);
+      productList.add(product);
+    }
+
+    return productList;
+  }
 }

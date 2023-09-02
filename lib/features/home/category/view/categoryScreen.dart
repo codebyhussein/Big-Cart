@@ -12,7 +12,7 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: style.backgroundColor,
+      backgroundColor: AppStyle.backgroundColor,
       body: Column(
         children: [
           DefultAppBar(

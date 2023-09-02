@@ -14,7 +14,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: style.backgroundColor,
+      backgroundColor: AppStyle.backgroundColor,
       body: BlocConsumer<CartCubit, CartState>(
         listener: (context, state) {
           if (state is AddProductToCart) {
@@ -72,7 +72,10 @@ class CartScreen extends StatelessWidget {
                         },
                       );
               }
-              return const Center(child: CircularProgressIndicator());
+              return Center(
+                  child: CircularProgressIndicator(
+                color: AppStyle.kmainColor,
+              ));
             },
             future: BlocProvider.of<CartCubit>(context).GetCartProduct(),
           );

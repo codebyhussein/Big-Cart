@@ -254,9 +254,9 @@ class _UserTextFormFieldState extends State<UserTextFormField> {
       decoration: InputDecoration(
         prefixIcon: widget.prefixIcon,
         suffixIcon: widget.suffixIcon,
-        suffixIconColor: style.kmainColor,
+        suffixIconColor: AppStyle.kmainColor,
         hintText: widget.hintText,
-        prefixIconColor: style.kmainColor,
+        prefixIconColor: AppStyle.kmainColor,
         labelText: widget.labelText,
         hintStyle: const TextStyle(
           color: Colors.grey,

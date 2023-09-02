@@ -12,7 +12,7 @@ class categoryFilter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: style.backgroundColor,
+        backgroundColor: AppStyle.backgroundColor,
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
