@@ -1,4 +1,4 @@
-import 'package:big_cart/features/Profile/widgets/pofileItemBuilder.dart';
+import 'package:big_cart/features/view/Profile/widgets/pofileItemBuilder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';

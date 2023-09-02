@@ -1,10 +1,12 @@
-import 'package:big_cart/Cubit/RegisterCubit/register_cubit.dart';
-import 'package:big_cart/features/Widgets/CustomButton.dart';
-import 'package:big_cart/features/Widgets/CustomTextFormField.dart';
 import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/core/style.dart';
-import 'package:big_cart/features/auth/login/LoginScreen.dart';
-import 'package:big_cart/features/home/layoutScreen.dart';
+import 'package:big_cart/features/auth/signin/RegisterScreen.dart';
+
+import 'package:big_cart/features/controller/LoginCubit/login_cubit.dart';
+import 'package:big_cart/features/view/Widgets/CustomButton.dart';
+import 'package:big_cart/features/view/Widgets/CustomTextFormField.dart';
+import 'package:big_cart/features/view/home/layoutScreen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,60 +14,60 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 //  import 'buttons/lib/src/custom_button.dart';
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   bool isvesible = true;
   bool isChecked = false;
   bool isloading = false;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
   var formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: BlocConsumer<RegisterCubit, RegisterState>(
+        body: BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
-        if (state is RegisterLoading) {
+        if (state is LoginLoading) {
           isloading = true;
-        } else if (state is RegisterSuccess) {
-          isloading = false;
+        } else if (state is LoginFailure) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(state.errorMassege,
+                  style: const TextStyle(color: Colors.white))));
+          isloading = true;
 
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) {
+              return const LoginScreen();
+            },
+          ));
+        } else if (state is LoginSuccess) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: Text('Welcome in the Big Cart',
+                  style: TextStyle(color: Colors.white))));
           Navigator.push(context, MaterialPageRoute(
             builder: (context) {
               return const layoutScreen();
             },
           ));
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              content: Text('Welcome in the Big Cart',
-                  style: TextStyle(color: Colors.white))));
-        } else if (state is RegisterFailure) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(state.errorMassege,
-                  style: const TextStyle(color: Colors.white))));
           isloading = false;
-
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) {
-              return const RegisterScreen();
-            },
-          ));
-        } else if (state is RegisterChange) {
+        } else if (state is LoginChange) {
           isvesible = !isvesible;
+        } else if (state is LoginRemberMeChange) {
+          isChecked = !isChecked;
         }
       },
       builder: (context, state) {
         return ModalProgressHUD(
+          inAsyncCall: isloading,
           progressIndicator: CircularProgressIndicator(
             color: AppStyle.kmainColor,
           ),
-          inAsyncCall: isloading,
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -82,7 +84,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 bottomLeft: Radius.circular(15),
                                 bottomRight: Radius.circular(15)),
                             image: DecorationImage(
-                                image: AssetImage('assets/images/register.png'),
+                                image: AssetImage('assets/images/login.png'),
                                 fit: BoxFit.cover)),
                       ),
                       SizedBox(
@@ -95,40 +97,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             const Text(
-                              'Create account',
+                              'Welcome !',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 30,
                                   color: Colors.black),
                             ),
                             DefultWidget.defultdesrption(
-                                text: 'Quickly create account'),
+                                text: 'Sign in to your account'),
                             SizedBox(
                               height: 10.h,
                             ),
                             CustomTextFormField(
                               isvisble: false,
                               nameofController: emailController,
-                              hintText: 'Email address',
-                              labelText: 'Email address',
-                              validateText: 'email address is required',
+                              hintText: 'email',
+                              labelText: 'email',
+                              validateText: 'email is required',
                               keyBoredType: TextInputType.emailAddress,
                               prefixIcon: const Icon(Icons.email_outlined),
                             ),
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            CustomTextFormField(
-                              isvisble: false,
-                              nameofController: phoneController,
-                              hintText: 'Phone number',
-                              labelText: 'Phone number',
-                              validateText: 'Phone number is required',
-                              keyBoredType: TextInputType.phone,
-                              prefixIcon: const Icon(Icons.phone),
-                            ),
-                            SizedBox(
-                              height: 10.h,
+                            const SizedBox(
+                              height: 20,
                             ),
                             CustomTextFormField(
                               isvisble: isvesible,
@@ -149,8 +139,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         Icons.remove_red_eye_outlined,
                                       ),
                                 onPressed: () async {
-                                  await BlocProvider.of<RegisterCubit>(context)
-                                      .change(value: isvesible);
+                                  await BlocProvider.of<LoginCubit>(context)
+                                      .vesiblePassword(isvesible: isvesible);
                                 },
                               ),
                             ),
@@ -160,23 +150,64 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       SizedBox(
                         height: 20.h,
                       ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12.w),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Checkbox(
+                                    checkColor: Colors.black,
+                                    fillColor: MaterialStateColor.resolveWith(
+                                        (states) => const Color.fromARGB(
+                                            255, 227, 224, 224)),
+                                    value: isChecked,
+                                    onChanged: (isChecked) async {
+                                      await BlocProvider.of<LoginCubit>(context)
+                                          .rememberMe(value: isChecked!);
+                                    }),
+                                SizedBox(
+                                  width: 6.h,
+                                ),
+                                DefultWidget.defultdesrption(
+                                    text: "Remember me"),
+                              ],
+                            ),
+                            TextButton(
+                                onPressed: () {},
+                                child: const Text(
+                                  "Forgot password",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(64, 125, 198, 1),
+                                  ),
+                                ))
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
                       CustomButton(
                           onpressed: () async {
                             if (formKey.currentState!.validate()) {
-                              await BlocProvider.of<RegisterCubit>(context)
-                                  .CreateUser(
-                                email: emailController.text,
-                                password: passwordController.text,
-                                phone: phoneController.text,
-                              );
+                              await BlocProvider.of<LoginCubit>(context)
+                                  .loginUser(
+                                      email: emailController.text,
+                                      password: passwordController.text);
+                              // Navigator.push(context, MaterialPageRoute(
+                              //   builder: (context) {
+                              //     return const layoutScreen();
+                              //   },
+                              // ));
                             }
                           },
-                          text: 'Signup'),
+                          text: 'Login'),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           DefultWidget.defultdesrption(
-                              text: "Already have an account ?"),
+                              text: "Don't have an account ?"),
                           SizedBox(
                             width: 5.w,
                           ),
@@ -184,12 +215,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(
                                   builder: (context) {
-                                    return const LoginScreen();
+                                    return const RegisterScreen();
                                   },
                                 ));
                               },
                               child: Text(
-                                "Login",
+                                "Sign up",
                                 style: TextStyle(
                                     fontSize: 15.sp,
                                     color: Colors.black,

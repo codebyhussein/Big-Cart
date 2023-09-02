@@ -1,10 +1,9 @@
-import 'package:big_cart/Cubit/CartCubit/cart_cubit.dart';
-import 'package:big_cart/Cubit/HomeCubit/home_cubit.dart';
-import 'package:big_cart/Cubit/LoginCubit/login_cubit.dart';
-import 'package:big_cart/Cubit/RegisterCubit/register_cubit.dart';
-import 'package:big_cart/features/auth/login/LoginScreen.dart';
-import 'package:big_cart/features/home/layoutScreen.dart';
-import 'package:big_cart/features/splash/splashScreen.dart';
+import 'package:big_cart/features/controller/CartCubit/cart_cubit.dart';
+import 'package:big_cart/features/controller/Cubit/LoginCubit/login_cubit.dart';
+
+import 'package:big_cart/features/controller/HomeCubit/home_cubit.dart';
+import 'package:big_cart/features/view/home/layoutScreen.dart';
+import 'package:big_cart/features/view/splash/splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,6 +12,7 @@ import 'package:get/get.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'features/controller/RegisterCubit/register_cubit.dart';
 import 'firebase_options.dart';
 
 void main() async {

@@ -1,6 +1,6 @@
 import 'package:big_cart/Cubit/LoginCubit/login_cubit.dart';
-import 'package:big_cart/Widgets/CustomButton.dart';
-import 'package:big_cart/Widgets/CustomTextFormField.dart';
+import 'package:big_cart/features/Widgets/CustomButton.dart';
+import 'package:big_cart/features/Widgets/CustomTextFormField.dart';
 import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/core/style.dart';
 import 'package:big_cart/features/auth/signin/RegisterScreen.dart';

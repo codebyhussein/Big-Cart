@@ -1,10 +1,12 @@
-import 'package:big_cart/Cubit/RegisterCubit/register_cubit.dart';
-import 'package:big_cart/features/Widgets/CustomButton.dart';
-import 'package:big_cart/features/Widgets/CustomTextFormField.dart';
 import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/core/style.dart';
 import 'package:big_cart/features/auth/login/LoginScreen.dart';
-import 'package:big_cart/features/home/layoutScreen.dart';
+import 'package:big_cart/features/controller/RegisterCubit/register_cubit.dart';
+
+import 'package:big_cart/features/view/Widgets/CustomButton.dart';
+import 'package:big_cart/features/view/Widgets/CustomTextFormField.dart';
+import 'package:big_cart/features/view/home/layoutScreen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
