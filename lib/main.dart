@@ -2,12 +2,14 @@ import 'package:big_cart/Cubit/CartCubit/cart_cubit.dart';
 import 'package:big_cart/Cubit/HomeCubit/home_cubit.dart';
 import 'package:big_cart/Cubit/LoginCubit/login_cubit.dart';
 import 'package:big_cart/Cubit/RegisterCubit/register_cubit.dart';
+import 'package:big_cart/features/auth/login/LoginScreen.dart';
 import 'package:big_cart/features/home/layoutScreen.dart';
 import 'package:big_cart/features/splash/splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -59,7 +61,7 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return MaterialApp(
+          return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             home: startWidget,
           );
