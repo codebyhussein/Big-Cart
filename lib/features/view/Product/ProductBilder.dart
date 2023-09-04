@@ -14,6 +14,12 @@ class ProductBuilder extends StatefulWidget {
 
   ProductModel productModel;
   int index;
+  List<String> imageList = [
+    'assets/images/item3.png',
+    'assets/images/item2.png',
+    'assets/images/item1.png',
+    'assets/images/veg1.png'
+  ];
 
   @override
   State<ProductBuilder> createState() => _ProductBuilderState();
@@ -61,7 +67,7 @@ class _ProductBuilderState extends State<ProductBuilder> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset('assets/images/veg1.png'),
+                    Image.asset(widget.imageList[widget.index]),
                     SizedBox(
                       height: 6.h,
                     ),

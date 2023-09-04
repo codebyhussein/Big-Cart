@@ -3,7 +3,7 @@ import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/features/view/home/layoutScreen.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../Profile/widgets/CustomAppBar.dart';
+import '../Profile/widgets/CustomAppBar.dart';
 
 class cartScreenEmpty extends StatelessWidget {
   const cartScreenEmpty({super.key});

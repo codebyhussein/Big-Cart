@@ -1,6 +1,6 @@
 import 'package:big_cart/core/style.dart';
 import 'package:big_cart/features/controller/RegisterCubit/register_cubit.dart';
-import 'package:big_cart/features/view/Profile/widgets/CustomAppBar.dart';
+import 'package:big_cart/features/view/home/Screens/Profile/widgets/CustomAppBar.dart';
 import 'package:big_cart/features/view/Widgets/CustomButton.dart';
 import 'package:big_cart/features/view/home/layoutScreen.dart';
 

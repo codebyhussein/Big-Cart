@@ -1,11 +1,11 @@
 import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/core/style.dart';
-import 'package:big_cart/features/view/Profile/CreateUser.dart';
-import 'package:big_cart/features/view/Profile/screens/abouteApp.dart';
+import 'package:big_cart/features/view/home/Screens/Profile/CreateUser.dart';
+import 'package:big_cart/features/view/home/Screens/Profile/screens/abouteApp.dart';
 
-import 'package:big_cart/features/view/Profile/screens/abouteMe.dart';
-import 'package:big_cart/features/view/Profile/screens/favorite/favoritScreen.dart';
-import 'package:big_cart/features/view/Profile/widgets/RowTemplete.dart';
+import 'package:big_cart/features/view/home/Screens/Profile/screens/abouteMe.dart';
+import 'package:big_cart/features/view/home/Screens/Profile/screens/favorite/favoritScreen.dart';
+import 'package:big_cart/features/view/home/Screens/Profile/widgets/RowTemplete.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_expanded_tile/flutter_expanded_tile.dart';

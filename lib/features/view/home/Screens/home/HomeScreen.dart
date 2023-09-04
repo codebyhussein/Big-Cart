@@ -1,8 +1,8 @@
 import 'package:big_cart/core/constant.dart';
 
 import 'package:big_cart/features/view/Product/widgets/FetchData.dart';
-import 'package:big_cart/features/view/home/category/view/categoryFilter.dart';
-import 'package:big_cart/features/view/home/category/view/categoryScreen.dart';
+import 'package:big_cart/features/view/home/Screens/category/view/categoryFilter.dart';
+import 'package:big_cart/features/view/home/Screens/category/view/categoryScreen.dart';
 import 'package:big_cart/features/view/home/widgets/DefultSearchWidget.dart';
 
 import 'package:flutter/material.dart';
@@ -10,7 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:iconly/iconly.dart';
 
-import '../../../widgets/Slider.dart';
+import '../../widgets/Slider.dart';
 
 class FeatureDataScreen extends StatefulWidget {
   const FeatureDataScreen({
@@ -132,7 +132,10 @@ class _FeatureDataScreenState extends State<FeatureDataScreen> {
                 decoration: const BoxDecoration(
                   color: Color(0xffF4F5F9),
                 ),
-                child: const FeaturedProduct()),
+                child: const Padding(
+                  padding: EdgeInsets.only(bottom: 10),
+                  child: FeaturedProduct(),
+                )),
           ],
         ),
       ),

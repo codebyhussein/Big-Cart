@@ -43,7 +43,6 @@ class categoryFilter extends StatelessWidget {
           centerTitle: true,
         ),
         body: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
-            child: FeaturedProduct()));
+            padding: EdgeInsets.all(8.0), child: FeaturedProduct()));
   }
 }

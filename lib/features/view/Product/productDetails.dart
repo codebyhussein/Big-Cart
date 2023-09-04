@@ -33,8 +33,10 @@ class productDetailsScreen extends StatelessWidget {
           isfav = !isfav;
         }
         if (state is AddProductToCart) {
-          Get.snackbar('', 'Product Added To Cart',
-              snackPosition: SnackPosition.BOTTOM);
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: Text('Added item Done',
+                  style: TextStyle(color: Colors.white))));
+
           Navigator.push(context, MaterialPageRoute(
             builder: (context) {
               return const layoutScreen();

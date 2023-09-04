@@ -1,11 +1,10 @@
 import 'package:big_cart/core/style.dart';
 
-import 'package:big_cart/features/view/Profile/profileScreen.dart';
-import 'package:big_cart/features/view/home/BottomNavigationBar/Screens/cart/cartScreenFull.dart';
-import 'package:big_cart/features/view/home/BottomNavigationBar/Screens/home/HomeScreen.dart';
-import 'package:big_cart/features/view/home/category/view/categoryScreen.dart';
+import 'package:big_cart/features/view/home/Screens/Profile/profileScreen.dart';
+import 'package:big_cart/features/view/home/Screens/cart/cartScreenFull.dart';
+import 'package:big_cart/features/view/home/Screens/home/HomeScreen.dart';
+import 'package:big_cart/features/view/home/Screens/category/view/categoryScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:iconly/iconly.dart';
 
@@ -34,7 +33,7 @@ class _layoutScreenState extends State<layoutScreen> {
             selectedFontSize: 25,
             elevation: 0,
             currentIndex: currentIndex,
-            selectedItemColor: Colors.green,
+            selectedItemColor: const Color(0xff6CC51D),
             unselectedItemColor: Colors.grey,
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
             onTap: (value) {
@@ -59,11 +58,11 @@ class _layoutScreenState extends State<layoutScreen> {
                 activeIcon: CircleAvatar(
                   backgroundColor: Colors.green,
                   child: Icon(
-                    IconlyLight.category,
+                    Icons.shopping_cart_outlined,
                   ),
                 ),
                 icon: Icon(
-                  IconlyLight.category,
+                  Icons.shopping_cart_outlined,
                 ),
                 label: '',
               ),
@@ -71,11 +70,11 @@ class _layoutScreenState extends State<layoutScreen> {
                 activeIcon: CircleAvatar(
                   backgroundColor: Colors.green,
                   child: Icon(
-                    IconlyLight.heart,
+                    IconlyLight.category,
                   ),
                 ),
                 icon: Icon(
-                  IconlyLight.heart,
+                  IconlyLight.category,
                 ),
                 label: '',
               ),

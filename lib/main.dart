@@ -5,6 +5,7 @@ import 'package:big_cart/features/view/home/layoutScreen.dart';
 import 'package:big_cart/features/view/splash/splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -21,13 +22,15 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   Widget? widget;
 
-  if (uid != null || email != null) {
+  if (uid != null && email != null) {
     widget = const layoutScreen();
   }
   if (uid == null || email == null) {
     widget = const SplashScreen();
   }
-
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
   runApp(MyApp(
     startWidget: widget!,
   ));

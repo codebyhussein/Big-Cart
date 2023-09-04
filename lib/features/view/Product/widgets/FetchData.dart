@@ -6,7 +6,6 @@ import 'package:big_cart/features/model/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../ProductBilder.dart';
 
 class FeaturedProduct extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:big_cart/core/style.dart';
-import 'package:big_cart/features/view/Profile/screens/favorite/widgets/fav_productTemplete.dart';
+import 'package:big_cart/features/view/home/Screens/Profile/screens/favorite/widgets/fav_productTemplete.dart';
 import 'package:big_cart/features/view/Widgets/DefultAppBar.dart';
 import 'package:big_cart/features/view/home/layoutScreen.dart';
 import 'package:flutter/material.dart';

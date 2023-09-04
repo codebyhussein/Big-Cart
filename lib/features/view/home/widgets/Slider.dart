@@ -17,9 +17,9 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 
   List<String> imgList = [
     "assets/images/home1.png",
-    "assets/images/home1.png",
-    "assets/images/home1.png",
-    "assets/images/home1.png",
+    "assets/images/2.jpg",
+    "assets/images/33.jpg",
+    "assets/images/4.jpg",
   ];
   @override
   Widget build(BuildContext context) {
