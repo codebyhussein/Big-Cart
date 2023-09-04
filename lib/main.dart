@@ -1,5 +1,4 @@
 import 'package:big_cart/features/controller/CartCubit/cart_cubit.dart';
-
 import 'package:big_cart/features/controller/HomeCubit/home_cubit.dart';
 import 'package:big_cart/features/controller/LoginCubit/login_cubit.dart';
 import 'package:big_cart/features/view/home/layoutScreen.dart';
@@ -9,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'features/controller/RegisterCubit/register_cubit.dart';
