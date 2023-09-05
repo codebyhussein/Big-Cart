@@ -14,16 +14,11 @@ class LoginCubit extends Cubit<LoginState> {
     try {
       emit(LoginLoading());
 
-      final credential = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
-      )
-          .then((value) {
-        pref.setString('email', value.user!.email!);
-      });
-
-      //print(email);
+      );
+      pref.setString('email', credential.user!.email!);
 
       emit(LoginSuccess());
     } on FirebaseAuthException catch (e) {
