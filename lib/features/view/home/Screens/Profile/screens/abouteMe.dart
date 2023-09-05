@@ -1,5 +1,7 @@
 import 'package:big_cart/core/constant.dart';
 import 'package:big_cart/core/style.dart';
+import 'package:big_cart/features/view/Widgets/CustomButton.dart';
+import 'package:big_cart/features/view/home/Screens/Profile/CreateUser.dart';
 import 'package:big_cart/features/view/home/layoutScreen.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -54,10 +56,116 @@ class _abouteMe_screenState extends State<abouteMe_screen> {
     return Scaffold(
         body: Center(
       child: getUserDetails.isEmpty
-          ? Center(
-              child: CircularProgressIndicator(
-              color: AppStyle.kmainColor,
-            ))
+          ? Column(children: [
+              CustomAppBar(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return const layoutScreen();
+                      },
+                    ));
+                  },
+                  title: 'About Me'),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    DefultWidget.productText(text: 'Personal Details'),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    Container(
+                      color: Colors.white,
+                      height: 60.h,
+                      width: double.infinity,
+                      child: Row(
+                        children: [
+                          const Icon(Icons.email_outlined),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          DefultWidget.defultdesrption(text: '****@gmail.com')
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    Container(
+                      color: Colors.white,
+                      height: 60.h,
+                      width: double.infinity,
+                      child: Row(
+                        children: [
+                          const Icon(IconlyLight.calendar),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          DefultWidget.defultdesrption(text: '*/*/****')
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    Container(
+                      color: Colors.white,
+                      height: 60.h,
+                      width: double.infinity,
+                      child: Row(
+                        children: [
+                          const Icon(Icons.phone),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          DefultWidget.defultdesrption(text: '*********')
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    DefultWidget.productText(text: 'Password'),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    Container(
+                      color: Colors.white,
+                      height: 60.h,
+                      width: double.infinity,
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.lock_open_outlined,
+                          ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          const Text('*******************')
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 50.h,
+              ),
+              CustomButton(
+                text: 'Go to Edit profile',
+                onpressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return const CreateUserScreen();
+                    },
+                  ));
+                },
+              ),
+            ])
           : ListView.builder(
               itemCount: getUserDetails.length,
               itemBuilder: (context, index) {
