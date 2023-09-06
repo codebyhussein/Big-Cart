@@ -8,10 +8,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconly/iconly.dart';
 
 class ProductItemCart extends StatefulWidget {
-  ProductItemCart({super.key, required this.productModel, required this.onTap});
+  ProductItemCart(
+      {super.key,
+      required this.productModel,
+      required this.onTap,
+      required this.index});
   ProductModel productModel;
   VoidCallback onTap;
-
+  int index;
+  List<String> imageList = [
+    'assets/images/item3.png',
+    'assets/images/item2.png',
+    'assets/images/item1.png',
+    'assets/images/veg1.png'
+  ];
   @override
   State<ProductItemCart> createState() => _ProductItemCartState();
 }
@@ -57,7 +67,8 @@ class _ProductItemCartState extends State<ProductItemCart> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset('assets/images/veg1.png'),
+                    // Image.asset('assets/images/veg1.png'),
+                    Image.asset(widget.imageList[widget.index]),
                     SizedBox(
                       height: 6.h,
                     ),

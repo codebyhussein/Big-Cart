@@ -86,4 +86,11 @@ class listImage {
       'categoryImage': 'assets/images/2.png',
     },
   ];
+
+  static List<String> imageList = [
+    'assets/images/item3.png',
+    'assets/images/item2.png',
+    'assets/images/item1.png',
+    'assets/images/veg1.png'
+  ];
 }

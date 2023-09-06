@@ -75,6 +75,7 @@ class CartScreen extends StatelessWidget {
                               itemCount: productList.length,
                               itemBuilder: (BuildContext ctx, index) {
                                 return ProductItemCart(
+                                  index: index,
                                   onTap: () async {
                                     SharedPreferences preferences =
                                         await SharedPreferences.getInstance();
